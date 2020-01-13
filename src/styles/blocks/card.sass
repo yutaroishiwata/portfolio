@@ -1,8 +1,11 @@
 .card
+  display: flex;
 
 .card__image
   display: block
   position: relative
+  min-width: 60%;
+  height: auto;
 
   img
     display: block
@@ -61,3 +64,7 @@
   color: $light-body-color
   font-size: 14px
   line-height: 1.4
+
+@media screen and (max-width: 400px)
+  .card
+    display: block;
