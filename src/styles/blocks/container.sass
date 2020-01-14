@@ -26,6 +26,7 @@
 
 @media screen and (min-width: 900px)
   .container
+    position: relative
     display: flex
     padding: 0
 
@@ -33,15 +34,19 @@
     display: none
 
   .container__sidebar
+    position: fixed
     display: block
     width: 30%
+    height: 100%
     min-width: 320px
     box-sizing: border-box
-    padding: 70px
+    padding: 70px 70px 10px
     background-color: white
 
   .container__body
-    flex: 1
+    position: absolute
+    right: 0
+    width: 70%
 
   .container__body--white
     background-color: white
