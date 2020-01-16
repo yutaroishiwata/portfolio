@@ -19,6 +19,9 @@ const IndexPage = ({ data }) => (
               <div className="card__description">
                 <p>{work.excerpt}</p>
               </div>
+              <div className="card__outline">
+                <p>{work.outline}</p>
+              </div>
             </figcaption>
           </figure>
         </div>
@@ -38,6 +41,7 @@ export const query = graphql`
           title
           slug
           excerpt
+          outline
           coverImage {
             fluid(maxWidth: 450, imgixParams: { fm: "jpg", auto: "compress" }) {
               ...GatsbyDatoCmsSizes
