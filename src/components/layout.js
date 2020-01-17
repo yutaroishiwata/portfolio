@@ -46,6 +46,9 @@ const TemplateWrapper = ({ children }) => {
           <HelmetDatoCms
             favicon={data.datoCmsSite.faviconMetaTags}
             seo={data.datoCmsHome.seoMetaTags}
+            meta={[
+                { name: 'keywords', content: '石綿　優太郎,石綿優太郎,イシワタ　ユウタロウ,イシワタユウタロウ,いしわた　ゆうたろう,いしわたゆうたろう' },
+            ]}
           />
           <div className="container__sidebar">
             <div className="sidebar">
