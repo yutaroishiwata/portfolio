@@ -4,7 +4,7 @@ import { HelmetDatoCms } from 'gatsby-source-datocms'
 import Img from 'gatsby-image'
 import Layout from "../components/layout"
 
-const About = ({ data: { cv } }) => (
+const CV = ({ data: { cv } }) => (
   <Layout>
     <article className="sheet">
       <HelmetDatoCms seo={cv.seoMetaTags} />
@@ -25,7 +25,7 @@ const About = ({ data: { cv } }) => (
   </Layout>
 )
 
-export default About
+export default CV
 
 export const query = graphql`
   query CvQuery {
