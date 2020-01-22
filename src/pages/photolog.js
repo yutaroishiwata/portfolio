@@ -10,7 +10,7 @@ const PhotoLog = ({ data }) => (
       {data.allDatoCmsPhotolog.edges.map(({ node: photolog }) => (
         <div key={photolog.id} className="showcase__gallery">
           <Img fluid={photolog.photo.fluid} />
-          <figcaption>{photolog.caption}</figcaption>
+          <figcaption className="showcase__caption">{photolog.caption}</figcaption>
         </div>
       ))}
     </Masonry>
