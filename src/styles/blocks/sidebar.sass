@@ -1,3 +1,7 @@
+.sidebar
+  position: relative
+  height: 100%
+
 .sidebar__title
   margin-bottom: 20px
 
@@ -23,25 +27,15 @@
       margin-bottom: 0
 
 .sidebar__menu
-  margin-bottom: 20px
+  margin-bottom: 30px
 
   li
     a
       text-decoration: none
       display: block
-      padding-left: 20px
       margin-bottom: 15px;
       color: $base-body-color
       position: relative
-
-      &:before
-        content: ""
-        position: absolute
-        left: 0
-        top: 50%
-        width: 6px
-        border-top: solid 1.5px #000;
-        opacity: 0.6
 
       &:hover
         color: $active-color
@@ -51,8 +45,11 @@
       color: $active-color
 
 .sidebar__social
-  margin: 100% 0 20px
+  position: absolute
+  bottom: 45px
 
 .sidebar__copyright
+  position: absolute
+  bottom: 0
   color: $light-body-color
   font-size: 13px
