@@ -44,7 +44,12 @@ const TemplateWrapper = ({ children }) => {
       `}
     render={data => (
         <React.Fragment>
-         <div className={`overlay ${showMenu ? "is-open" : ""}`}></div>
+         <div className={`overlay ${showMenu ? "is-open" : ""}`}
+           onClick={e => {
+              e.preventDefault();
+              setShowMenu(!showMenu);
+           }}
+         />
          <div className={`container ${showMenu ? "is-open" : ""}`}>
            <HelmetDatoCms favicon={data.datoCmsSite.faviconMetaTags} seo={data.datoCmsHome.seoMetaTags}>
              <script src="https://kit.fontawesome.com/6aff6489bc.js" crossorigin="anonymous"></script>    
