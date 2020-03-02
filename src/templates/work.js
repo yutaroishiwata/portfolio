@@ -29,6 +29,9 @@ export default ({ data }) => (
           <Img fluid={data.datoCmsWork.coverImage.fluid} />
         </div>
       </div>
+      <div className="sheet__outline">
+        <p>{data.datoCmsWork.outline}</p>
+      </div>
     </article>
   </Layout>
 )
@@ -41,6 +44,7 @@ export const query = graphql`
       }
       title
       excerpt
+      outline
       gallery {
         fluid(maxWidth: 200, imgixParams: { fm: "jpg", auto: "compress" }) {
           src
