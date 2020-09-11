@@ -3,9 +3,13 @@ import { graphql } from 'gatsby'
 import Masonry from 'react-masonry-component'
 import Img from 'gatsby-image'
 import Layout from "../components/layout"
+import { Helmet } from "react-helmet";
 
 const PhotoLog = ({ data }) => (
   <Layout>
+    <Helmet>
+      <title>PhotoLog</title>
+    </Helmet>
     <Masonry className="showcase">
       {data.allDatoCmsPhotolog.edges.map(({ node: photolog }) => (
         <div key={photolog.id} className="showcase__gallery">
