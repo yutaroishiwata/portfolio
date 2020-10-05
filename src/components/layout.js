@@ -31,7 +31,10 @@ const TemplateWrapper = ({ children }) => {
             }
             copyright
           }
-          allDatoCmsSocialProfile(sort: { fields: [position], order: ASC }) {
+          allDatoCmsSocialProfile(
+            filter: { locale: { eq: "en" } }
+            sort: { fields: [position], order: ASC}
+          ) {
             edges {
               node {
                 profileType
