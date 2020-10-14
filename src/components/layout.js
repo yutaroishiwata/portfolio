@@ -3,11 +3,13 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import { StaticQuery, graphql } from "gatsby";
 import { HelmetDatoCms } from "gatsby-source-datocms";
+import { useI18next } from 'gatsby-plugin-react-i18next';
 
 import "../styles/index.sass";
 
 const TemplateWrapper = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
+  const {languages, changeLanguage} = useI18next();
   return (
     <StaticQuery
       query={graphql`
@@ -79,6 +81,20 @@ const TemplateWrapper = ({ children }) => {
                  <li>
                    <Link to="/cv">cv</Link>
                  </li>
+               </ul>
+               <ul className="languages">
+                {languages.map((lng) => (
+                  <li key={lng}>
+                    <a
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        changeLanguage(lng);
+                      }}>
+                      {lng}
+                    </a>
+                  </li>
+                ))}
                </ul>
                <p className="sidebar__social">
                  {data.allDatoCmsSocialProfile.edges.map(({ node: profile }) => (

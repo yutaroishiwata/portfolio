@@ -28,8 +28,8 @@ const CV = ({ data: { cv } }) => (
 export default CV
 
 export const query = graphql`
-  query CvQuery($locale: String!) {
-    cv: datoCmsCv(locale: { eq: $locale }) {
+  query CvQuery($language: String!) {
+    cv: datoCmsCv(locale: { eq: $language }) {
       seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
       }

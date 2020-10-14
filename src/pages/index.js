@@ -33,9 +33,9 @@ const IndexPage = ({ data }) => (
 export default IndexPage
 
 export const query = graphql`
-  query IndexQuery($locale: String!) {
+  query IndexQuery($language: String!) {
     allDatoCmsWork(
-      filter: { locale: { eq: $locale } }
+      filter: { locale: { eq: $language } },
       sort: { fields: [position], order: ASC }) 
     {
       edges {

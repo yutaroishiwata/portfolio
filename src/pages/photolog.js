@@ -24,9 +24,9 @@ const PhotoLog = ({ data }) => (
 export default PhotoLog
 
 export const query = graphql`
-  query PhotologQuery($locale: String!) {
+  query PhotologQuery($language: String!) {
     allDatoCmsPhotolog(
-      filter: { locale: { eq: $locale } }
+      filter: { locale: { eq: $language } }
       sort: { fields: [position], order: ASC }
     ) {
       edges {
