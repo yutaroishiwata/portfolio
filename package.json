@@ -13,7 +13,7 @@
     "gatsby-plugin-sass": "^2.1.17",
     "gatsby-source-datocms": "^2.1.18",
     "gatsby-source-filesystem": "^2.1.29",
-    "gatsby-transformer-remark": "^2.6.27",
+    "gatsby-transformer-remark": "^5.25.1",
     "i18next": "^19.8.2",
     "node-sass": "^4.14.1",
     "react": "^16.10.2",
