@@ -15,7 +15,7 @@
     "gatsby-source-filesystem": "^5.7.0",
     "gatsby-transformer-remark": "^6.10.0",
     "i18next": "^22.5.0",
-    "node-sass": "^9.0.0",
+    "node-sass": "8.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
