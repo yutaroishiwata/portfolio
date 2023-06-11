@@ -39,7 +39,7 @@ export default ({ data }) => (
 export const query = graphql`
   query WorkQuery($slug: String!, $language: String!) {
     datoCmsWork(
-      locale: { eq: $language },
+      locale: $language,
       slug: { eq: $slug }
     ) {
       seoMetaTags {

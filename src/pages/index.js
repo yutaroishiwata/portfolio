@@ -35,7 +35,7 @@ export default IndexPage
 export const query = graphql`
   query IndexQuery($language: String!) {
     allDatoCmsWork(
-      filter: { locale: { eq: $language } },
+      locale: $language,
       sort: { fields: [position], order: ASC }) 
     {
       edges {
@@ -44,7 +44,6 @@ export const query = graphql`
           title
           slug
           excerpt
-          locale
           outline
           coverImage {
             fluid(maxWidth: 450, imgixParams: { fm: "jpg", auto: "compress" }) {

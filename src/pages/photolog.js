@@ -26,14 +26,13 @@ export default PhotoLog
 export const query = graphql`
   query PhotologQuery($language: String!) {
     allDatoCmsPhotolog(
-      filter: { locale: { eq: $language } }
+      locale: $language,
       sort: { fields: [position], order: ASC }
     ) {
       edges {
         node {
           id
           caption
-          locale
           photo {
             fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
               ...GatsbyDatoCmsSizes
