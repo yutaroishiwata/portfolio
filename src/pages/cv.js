@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { HelmetDatoCms } from 'gatsby-source-datocms'
-import Img from 'gatsby-image'
+import { GatsbyImage } from "gatsby-plugin-image";
 import Layout from "../components/layout"
 
 const CV = ({ data: { cv } }) => (
@@ -12,7 +12,7 @@ const CV = ({ data: { cv } }) => (
         <h1 className="sheet__title">{cv.title}</h1>
         <p className="sheet__lead">{cv.subtitle}</p>
         <div className="sheet__gallery">
-          <Img fluid={cv.photo.fluid} />
+          <GatsbyImage image={cv.photo.gatsbyImageData} />
         </div>
         <div
           className="sheet__body"
@@ -36,9 +36,11 @@ export const query = graphql`
       title
       subtitle
       photo {
-        fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
-          ...GatsbyDatoCmsSizes
-        }
+        gatsbyImageData(
+          width: 600
+          placeholder: BLURRED
+          forceBlurhash: false
+        )
       }
       bioNode {
         childMarkdownRemark {

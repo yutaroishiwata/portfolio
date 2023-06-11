@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage } from "gatsby-plugin-image";
 import Layout from "../components/layout"
 
 const IndexPage = ({ data }) => (
@@ -10,7 +10,7 @@ const IndexPage = ({ data }) => (
         <div key={work.id} className="showcase__item">
           <figure className="card">
             <Link to={`/works/${work.slug}`} className="card__image">
-              <Img fluid={work.coverImage.fluid} />
+              <GatsbyImage image={work.coverImage.gatsbyImageData} />
             </Link>
             <figcaption className="card__caption">
               <h6 className="card__title">
@@ -46,9 +46,10 @@ export const query = graphql`
           excerpt
           outline
           coverImage {
-            fluid(maxWidth: 450, imgixParams: { fm: "jpg", auto: "compress" }) {
-              ...GatsbyDatoCmsSizes
-            }
+            gatsbyImageData(
+              width: 450
+              placeholder: BLURRED
+            )
           }
         }
       }

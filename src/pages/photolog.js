@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Masonry from 'react-masonry-component'
-import Img from 'gatsby-image'
+import { GatsbyImage } from "gatsby-plugin-image";
 import Layout from "../components/layout"
 import { Helmet } from "react-helmet";
 
@@ -13,7 +13,7 @@ const PhotoLog = ({ data }) => (
     <Masonry className="showcase">
       {data.allDatoCmsPhotolog.edges.map(({ node: photolog }) => (
         <div key={photolog.id} className="showcase__gallery">
-          <Img fluid={photolog.photo.fluid} />
+          <GatsbyImage image={photolog.photo.gatsbyImageData} />
           <figcaption className="showcase__caption">{photolog.caption}</figcaption>
         </div>
       ))}
@@ -34,9 +34,10 @@ export const query = graphql`
           id
           caption
           photo {
-            fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
-              ...GatsbyDatoCmsSizes
-            }
+            gatsbyImageData(
+              width: 600
+              placeholder: BLURRED
+            )
           }
         }
       }
